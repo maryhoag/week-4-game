@@ -1,3 +1,12 @@
 body {
-	background-image: url("../images/jakku_1.jpg");
+	background-image: url("../images/jakku.png");
+	background-repeat: no-repeat;
+}
+
+.jumbotron {
+	color: #48352e;
+	background-color: #9ed6e3;
+}
+h1 {
+	text-shadow: 2px 2px;
 }
