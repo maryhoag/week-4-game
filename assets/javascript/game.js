@@ -11,25 +11,21 @@ var userHealthPoints;
 var enemyHealth;
 
 var rey = {name: "Rey", health: 20, attack: 3, counter: 4};
-var kylo = {name: "Kylo", health: 22, attack:2, counter:3};
-var finn = {name:"Finn", health:25, attack: 2, counter:3};
-var phasma = {name: "Phasma", health:20, attack:3, counter:3};
+var kylo = {name: "Kylo", health: 22, attack: 2, counter: 3};
+var finn = {name:"Finn", health: 25, attack: 2, counter: 3};
+var phasma = {name: "Phasma", health: 20, attack: 3, counter: 3};
 
 //collect user pick for combatant
 var game = {
 	setCharacter: function () {
-		$("#one").html(this);
-		user = this.value;
-		attackPower=value.attack;
-		userHealthPoints=value.health;
-
-		$("#healthOne").html(value.health);
+		var protag = $("<img>").html(this);
+		$("#one").append(protag);
 	},
 
 	setEnemy: function() {
 		$("#two").html(this);
 		opponent = this.value;
-		enemyHealth=value.health;
+		enemyHealth = opponent.health;
 
 		$("#healthTwo").html(value.health);
 		console.log(opponent);
@@ -39,22 +35,37 @@ var game = {
 	userAttack: function() {
 		enemyHealth -= user.attack;
 		attackPower += user.attack;
+		$("healthOne").html(enemyHealth);
 	},
 
 	opponentAttack: function() {
 		userHealthPoints -= opponent.counter;
+		$("#healthTwo").html(userHealthPoints);
 	}
 
 };
 
+//this isn't working either
+$(".won").innerHTML("3");
 
 
+//this doesn't work
 $(".image").on("click", function() {
-	game.setCharacter();
-	console.log(user);
-	game.setEnemy();
-	console.log(opponent);
+	if(user == null) {
+		game.setCharacter();
+	}
+	 else {
+	 	game.setEnemy();
+		$("#image").attr("disabled", true);
+		console.log(user);
+	}
 });
+//but this does
+$(".btn-danger").on("click", function() {
+	userAttack();
+	opponent():
+});
+
 
 //loop or function
 

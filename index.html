@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
@@ -17,8 +17,8 @@
 	<div class="jumbotron">
 		<h1 class="row">The Battle of Jakku</h1>
 		<div class="row">
-			<div class="col-md-6">Games Won: </div>
-			<div class="col-md-6">Games Lost: </div>
+			<div class="col-md-6 won">Games Won: </div>
+			<div class="col-md-6 lost">Games Lost: </div>
 		</div>
 	</div>
 	<!--scoring panel -->
@@ -31,6 +31,10 @@
 	 	<div class="col-md-4" id="one">
 	 	</div>
 	 </div>
+	 <div class="col-md-4 col-centered">
+	 	<button type="button" class="btn btn-danger">Attack!</button>
+	 </div>
+
 
 	 <div class="row">
 	 	<p class="healthTwo"></p>
@@ -48,15 +52,15 @@
 			<img src="assets/images/rey.jpg" alt="Rey" height="150" width="150" class="image" value="rey">
 		</div>
 		<div class="col-md-2 display">
-				<img src="assets/images/kylo.jpg" alt="Kylo" height="150" width="150" id="kylo">
+				<img src="assets/images/kylo.jpg" alt="Kylo" height="150" width="150" class="image" value="kylo">
 		</div>
 	</div>
 		<div class="row">
 		<div class="col-md-2 display">
-			<img src="assets/images/phasma.jpg" alt="Phasma" height="150" width="150" id="phasma">
+			<img src="assets/images/phasma.jpg" alt="Phasma" height="150" width="150" class="image" value="phasma">
 		</div>
 		<div class="col-md-2 display">
-			<img src="assets/images/finn.jpg" alt="Finn" height="150" width="150" id="finn">
+			<img src="assets/images/finn.jpg" alt="Finn" height="150" width="150" class="image" value="finn">
 		</div>
 	</div>
 
