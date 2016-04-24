@@ -10,3 +10,8 @@ body {
 h1 {
 	text-shadow: 2px 2px;
 }
+
+.name {
+	background-color: #1f2a2d;
+	color: #ceeaf1;
+}

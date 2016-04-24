@@ -2,20 +2,59 @@
 	//health, attack( which += with each attack), counter
 	//also name, photo, maybe sound effect?
 	//while enemy, only counter and unchangeable
-var rey = {name: "Rey", image:"src='.//css/images.rey.jpg' alt='Rey' height='200px' width='200px;' ", health: 20, attack: 5, counter: 6};
-var kylo = {name: "Kylo", image:"src='.//css/images.kylo.jpg' alt='Kylo' height='200px' width='200px' ", health: 22, attack:4, counter:5};
-var finn = {name:"Finn", image:"src='.//css/images/finn.jpg' alt='Finn' height='200px' width='200px'", health:25, attack: 3, counter:7};
-var phasma = {name: "Phasma", image:"src='.//css.images/phasma.jpg' alt='Phasma' height='200px' width=200px' ", health:20, attack:6, counter:5};
+var wins;
+var loses;
+var user;
+var opponent;
+var attackPower;
+var userHealthPoints;
+var enemyHealth;
+
+var rey = {name: "Rey", health: 20, attack: 3, counter: 4};
+var kylo = {name: "Kylo", health: 22, attack:2, counter:3};
+var finn = {name:"Finn", health:25, attack: 2, counter:3};
+var phasma = {name: "Phasma", health:20, attack:3, counter:3};
 
 //collect user pick for combatant
-$
+var game = {
+	setCharacter: function () {
+		$("#one").html(this);
+		user = this.value;
+		attackPower=value.attack;
+		userHealthPoints=value.health;
+
+		$("#healthOne").html(value.health);
+	},
+
+	setEnemy: function() {
+		$("#two").html(this);
+		opponent = this.value;
+		enemyHealth=value.health;
+
+		$("#healthTwo").html(value.health);
+		console.log(opponent);
+
+	},
+
+	userAttack: function() {
+		enemyHealth -= user.attack;
+		attackPower += user.attack;
+	},
+
+	opponentAttack: function() {
+		userHealthPoints -= opponent.counter;
+	}
+
+};
 
 
-//remove other players to enemy corral
 
-//collect user pick for first defender
-
-//move first defender into combat
+$(".image").on("click", function() {
+	game.setCharacter();
+	console.log(user);
+	game.setEnemy();
+	console.log(opponent);
+});
 
 //loop or function
 
