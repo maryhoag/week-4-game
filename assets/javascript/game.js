@@ -2,9 +2,13 @@
 	//health, attack( which += with each attack), counter
 	//also name, photo, maybe sound effect?
 	//while enemy, only counter and unchangeable
+
+	//to do
+
+var protagChosen = false;
 var wins;
 var loses;
-var user;
+var user = null;
 var opponent;
 var attackPower;
 var userHealthPoints;
@@ -17,14 +21,16 @@ var phasma = {name: "Phasma", health: 20, attack: 3, counter: 3};
 
 //collect user pick for combatant
 var game = {
-	setCharacter: function () {
-		var protag = $("<img>").html(this);
-		$("#one").append(protag);
+	setCharacter: function (user) {
+		console.log(user);
+		//attackPower = user.attack;
+		//userHealthPoints = user.health;
+		//add another row and another div underneath and then add the name and healt
+		protagChosen == true;
+		console.log(attackPower);
 	},
 
-	setEnemy: function() {
-		$("#two").html(this);
-		opponent = this.value;
+	setEnemy: function(user) {
 		enemyHealth = opponent.health;
 
 		$("#healthTwo").html(value.health);
@@ -46,24 +52,30 @@ var game = {
 };
 
 //this isn't working either
-$(".won").innerHTML("3");
+$(".won").append("three");
 
 
 //this doesn't work
-$(".image").on("click", function() {
-	if(user == null) {
-		game.setCharacter();
-	}
-	 else {
-	 	game.setEnemy();
-		$("#image").attr("disabled", true);
+//corrected syntex for jquery
+$(".image").click(function() {
+	$("#protag").html(this);
+	$("#protag").addClass("img-responsive center-block");
+	console.log(this.data);
+	if(protagChosen == false) {
+		user = this.id;
 		console.log(user);
+		game.setCharacter();
+	} else {
+		opponent = this.value;
+		game.setEnemy();
+
 	}
+	
 });
 //but this does
-$(".btn-danger").on("click", function() {
+$(".btn-danger").click(function() {
 	userAttack();
-	opponent():
+	opponent();
 });
 
 
